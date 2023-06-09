@@ -68,7 +68,7 @@ public class FizzBuzzProgram {
     }
 
     public void fizz() throws InterruptedException {
-        while (current.get() < n) {
+        while (current.get() <= n) {
             if (current.get() % 3 == 0 && current.get() % 5 != 0) {
                 queue.put("fizz");
                 current.incrementAndGet();
@@ -105,7 +105,7 @@ public class FizzBuzzProgram {
             }
             while (!queue.isEmpty()) {
                 System.out.print(queue.take());
-                if (current.get() <= n) {
+                if (!queue.isEmpty()||current.get() <= n) {
                     System.out.print(", ");
                 } else {
                     System.out.print(".");
